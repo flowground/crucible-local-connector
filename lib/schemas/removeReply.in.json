@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "rId": {
+            "required": true,
+            "type": "string"
+        },
+        "cId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

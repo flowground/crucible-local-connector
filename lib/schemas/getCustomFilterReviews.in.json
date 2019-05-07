@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "title": {
+            "required": false,
+            "type": "string"
+        },
+        "author": {
+            "required": false,
+            "type": "string"
+        },
+        "moderator": {
+            "required": false,
+            "type": "string"
+        },
+        "creator": {
+            "required": false,
+            "type": "string"
+        },
+        "states": {
+            "required": false,
+            "type": "string"
+        },
+        "reviewer": {
+            "required": false,
+            "type": "string"
+        },
+        "orRoles": {
+            "required": false,
+            "type": "boolean"
+        },
+        "complete": {
+            "required": false,
+            "type": "boolean"
+        },
+        "allReviewersComplete": {
+            "required": false,
+            "type": "boolean"
+        },
+        "project": {
+            "required": false,
+            "type": "string"
+        },
+        "fromDate": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "toDate": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        }
+    }
+}

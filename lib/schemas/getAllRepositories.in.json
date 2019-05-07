@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "enabled": {
+            "required": false,
+            "type": "boolean"
+        },
+        "available": {
+            "required": false,
+            "type": "boolean"
+        },
+        "type": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 10000
+        }
+    }
+}

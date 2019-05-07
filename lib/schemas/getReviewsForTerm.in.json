@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "term": {
+            "required": false,
+            "type": "string"
+        },
+        "maxReturn": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

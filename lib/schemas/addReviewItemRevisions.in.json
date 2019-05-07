@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "rev": {
+            "required": false,
+            "type": "string"
+        },
+        "riId": {
+            "required": true,
+            "type": "string"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

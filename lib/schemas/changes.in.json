@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "oldestCsid": {
+            "required": false,
+            "type": "string"
+        },
+        "includeOldest": {
+            "required": false,
+            "type": "boolean"
+        },
+        "newestCsid": {
+            "required": false,
+            "type": "string"
+        },
+        "includeNewest": {
+            "required": false,
+            "type": "boolean"
+        },
+        "max": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "patchId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

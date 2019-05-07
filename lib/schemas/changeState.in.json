@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "action": {
+            "required": false,
+            "type": "string"
+        },
+        "ignoreWarnings": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

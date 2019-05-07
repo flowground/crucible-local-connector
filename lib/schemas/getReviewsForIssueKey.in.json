@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "jiraKey": {
+            "required": false,
+            "type": "string"
+        },
+        "maxReturn": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

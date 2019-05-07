@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

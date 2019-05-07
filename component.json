@@ -1,0 +1,1367 @@
+{
+    "title": "Crucible",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/crucible.local/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://crucible.local/context/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "login": {
+            "main": "./lib/actions/login.js",
+            "title": "Get the user authentication token.\n \n This is a legacy version of the login request. Using GET is deprecated as your password is likely to appear in logs which record request URLs.\n Use the POST version instead.",
+            "description": "Get the user authentication token.\n \n This is a legacy version of the login request. Using GET is deprecated as your password is likely to appear in logs which record request URLs.\n Use the POST version instead.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/login.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "loginPost": {
+            "main": "./lib/actions/loginPost.js",
+            "title": "Get the user authentication token.",
+            "description": "Get the user authentication token.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/loginPost.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllProjects": {
+            "main": "./lib/actions/getAllProjects.js",
+            "title": "Get the list of projects that the authenticated user is entitled to access.",
+            "description": "Get the list of projects that the authenticated user is entitled to access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllProjects.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getProject": {
+            "main": "./lib/actions/getProject.js",
+            "title": "Returns a project description.",
+            "description": "Returns a project description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProject.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllRepositories": {
+            "main": "./lib/actions/getAllRepositories.js",
+            "title": "Returns a list of all repositories. This includes plugin provided repositories",
+            "description": "Returns a list of all repositories. This includes plugin provided repositories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllRepositories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "browse": {
+            "main": "./lib/actions/browse.js",
+            "title": "Lists the contents of the specified directory.",
+            "description": "Lists the contents of the specified directory.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/browse.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "change": {
+            "main": "./lib/actions/change.js",
+            "title": "Represents a particular changeset.",
+            "description": "Represents a particular changeset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/change.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "changes": {
+            "main": "./lib/actions/changes.js",
+            "title": "Represents a sorted list of changesets, newest first.",
+            "description": "Represents a sorted list of changesets, newest first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/changes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getContents": {
+            "main": "./lib/actions/getContents.js",
+            "title": "Returns the raw content of the specified file revision as a binary\n stream. No attempt is made to identify the content type and no mime\n type is provided.",
+            "description": "Returns the raw content of the specified file revision as a binary\n stream. No attempt is made to identify the content type and no mime\n type is provided.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getContents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "history": {
+            "main": "./lib/actions/history.js",
+            "title": "Represents the history of a versioned entity.",
+            "description": "Represents the history of a versioned entity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/history.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRepositoryDetails": {
+            "main": "./lib/actions/getRepositoryDetails.js",
+            "title": "getRepositoryDetails",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRepositoryDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSvnRepositoryDetails": {
+            "main": "./lib/actions/getSvnRepositoryDetails.js",
+            "title": "For backward compatibility we provide this method, but repositories should be referred to just by their key.",
+            "description": "For backward compatibility we provide this method, but repositories should be referred to just by their key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSvnRepositoryDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "details": {
+            "main": "./lib/actions/details.js",
+            "title": "details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/details.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllReviews": {
+            "main": "./lib/actions/getAllReviews.js",
+            "title": "getAllReviews",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createReview": {
+            "main": "./lib/actions/createReview.js",
+            "title": "createReview",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllDetailedReviews": {
+            "main": "./lib/actions/getAllDetailedReviews.js",
+            "title": "Retrieves all reviews that are in one of the the specified states. For each review all details are included (review items + comments). The\n wiki rendered comments will be available via the <messageAsHtml> element",
+            "description": "Retrieves all reviews that are in one of the the specified states. For each review all details are included (review items + comments). The\n wiki rendered comments will be available via the <messageAsHtml> element",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllDetailedReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCustomFilterReviews": {
+            "main": "./lib/actions/getCustomFilterReviews.js",
+            "title": "To ignore a property, omit it from the query string.",
+            "description": "To ignore a property, omit it from the query string.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCustomFilterReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postCustomFilterReviews": {
+            "main": "./lib/actions/postCustomFilterReviews.js",
+            "title": "This method should no longer be used, as it uses a POST for a read-only\n retrieval operation and is provided for backward compatibility only.",
+            "description": "This method should no longer be used, as it uses a POST for a read-only\n retrieval operation and is provided for backward compatibility only.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCustomFilterReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDetailedCustomFilterReviews": {
+            "main": "./lib/actions/getDetailedCustomFilterReviews.js",
+            "title": "To ignore a property, omit it from the query string.",
+            "description": "To ignore a property, omit it from the query string.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDetailedCustomFilterReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postDetailedCustomFilterReviews": {
+            "main": "./lib/actions/postDetailedCustomFilterReviews.js",
+            "title": "This method should no longer be used, as it uses a POST for a read-only\n retrieval operation and is provided for backward compatibility only.",
+            "description": "This method should no longer be used, as it uses a POST for a read-only\n retrieval operation and is provided for backward compatibility only.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postDetailedCustomFilterReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFilteredReviewsForUser": {
+            "main": "./lib/actions/getFilteredReviewsForUser.js",
+            "title": "Get all the reviews which match the given filter, for the current user.",
+            "description": "Get all the reviews which match the given filter, for the current user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFilteredReviewsForUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDetailedFilteredReviewsForUser": {
+            "main": "./lib/actions/getDetailedFilteredReviewsForUser.js",
+            "title": "Gets a list of all the reviews that match the specified filter criteria.",
+            "description": "Gets a list of all the reviews that match the specified filter criteria.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDetailedFilteredReviewsForUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMetrics": {
+            "main": "./lib/actions/getMetrics.js",
+            "title": "Get comment metrics metadata for the specified metrics version.",
+            "description": "Get comment metrics metadata for the specified metrics version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMetrics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewsForPath": {
+            "main": "./lib/actions/getReviewsForPath.js",
+            "title": "Return a list of Reviews which include a particular file.",
+            "description": "Return a list of Reviews which include a particular file.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewsForPath.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewsDetailsForPath": {
+            "main": "./lib/actions/getReviewsDetailsForPath.js",
+            "title": "Return a list of Reviews which include a particular file.",
+            "description": "Return a list of Reviews which include a particular file.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewsDetailsForPath.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getVersionInfo": {
+            "main": "./lib/actions/getVersionInfo.js",
+            "title": "Returns Crucible version information.",
+            "description": "Returns Crucible version information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getVersionInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteReview": {
+            "main": "./lib/actions/deleteReview.js",
+            "title": "Permanently deletes the specified review.\n The review must have been abandoned.",
+            "description": "Permanently deletes the specified review.\n The review must have been abandoned.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReview": {
+            "main": "./lib/actions/getReview.js",
+            "title": "Get a single review by its permId (e.g. \"CR-45\").\n If the review does not exist, a 404 is returned.\n \n The moderator element may not exist if the review does not have a Moderator.",
+            "description": "Get a single review by its permId (e.g. \"CR-45\").\n If the review does not exist, a 404 is returned.\n \n The moderator element may not exist if the review does not have a Moderator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAvailableActions": {
+            "main": "./lib/actions/getAvailableActions.js",
+            "title": "Get a list of the actions which the current user is allowed to perform\n on the review.",
+            "description": "Get a list of the actions which the current user is allowed to perform\n on the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAvailableActions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addChangesetToReview": {
+            "main": "./lib/actions/addChangesetToReview.js",
+            "title": "addChangesetToReview",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addChangesetToReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addFile": {
+            "main": "./lib/actions/addFile.js",
+            "title": "addFile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addFile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addPatchReview0": {
+            "main": "./lib/actions/addPatchReview0.js",
+            "title": "Old, non-restful name. Kept for backwards compatibility. Exactly the same as POSTing to /{id}/patch",
+            "description": "Old, non-restful name. Kept for backwards compatibility. Exactly the same as POSTing to /{id}/patch",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addPatchReview0.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "closeReviewWithComment": {
+            "main": "./lib/actions/closeReviewWithComment.js",
+            "title": "Closes the given review with the summary given.",
+            "description": "Closes the given review with the summary given.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/closeReviewWithComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllComments": {
+            "main": "./lib/actions/getAllComments.js",
+            "title": "Return all the comments visible to the requesting user for the review.",
+            "description": "Return all the comments visible to the requesting user for the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addGeneralComment": {
+            "main": "./lib/actions/addGeneralComment.js",
+            "title": "Add a general comment to the review.",
+            "description": "Add a general comment to the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addGeneralComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneralComments": {
+            "main": "./lib/actions/getGeneralComments.js",
+            "title": "getGeneralComments",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneralComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "markAllCommentsAsRead": {
+            "main": "./lib/actions/markAllCommentsAsRead.js",
+            "title": "For the effective user, mark all comments in a review as read (except\n those marked as leave unread).",
+            "description": "For the effective user, mark all comments in a review as read (except\n those marked as leave unread).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/markAllCommentsAsRead.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getVersionedComments": {
+            "main": "./lib/actions/getVersionedComments.js",
+            "title": "getVersionedComments",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getVersionedComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeComment": {
+            "main": "./lib/actions/removeComment.js",
+            "title": "Deletes the given comment.",
+            "description": "Deletes the given comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getComment": {
+            "main": "./lib/actions/getComment.js",
+            "title": "Gets the given comment.",
+            "description": "Gets the given comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateComment": {
+            "main": "./lib/actions/updateComment.js",
+            "title": "Updates the comment given by the perma id to the new comment posted.",
+            "description": "Updates the comment given by the perma id to the new comment posted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "markCommentAsLeaveUnread": {
+            "main": "./lib/actions/markCommentAsLeaveUnread.js",
+            "title": "Marks the comment as leave unread to the current user - it will not automatically be marked as read by crucible.",
+            "description": "Marks the comment as leave unread to the current user - it will not automatically be marked as read by crucible.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/markCommentAsLeaveUnread.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "markCommentAsRead": {
+            "main": "./lib/actions/markCommentAsRead.js",
+            "title": "Mark the given comment as read for the user used to make this POST.",
+            "description": "Mark the given comment as read for the user used to make this POST.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/markCommentAsRead.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReplies": {
+            "main": "./lib/actions/getReplies.js",
+            "title": "Gets the replies to the given comment.",
+            "description": "Gets the replies to the given comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReplies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addReply": {
+            "main": "./lib/actions/addReply.js",
+            "title": "Adds a reply to the given comment. This call includes the  repsonse header that\n contains the URL of the newly created entity.",
+            "description": "Adds a reply to the given comment. This call includes the  repsonse header that\n contains the URL of the newly created entity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addReply.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeReply": {
+            "main": "./lib/actions/removeReply.js",
+            "title": "Deletes the reply.",
+            "description": "Deletes the reply.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeReply.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateReply": {
+            "main": "./lib/actions/updateReply.js",
+            "title": "Updates a reply with the given newComment.",
+            "description": "Updates a reply with the given newComment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateReply.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "completeReview": {
+            "main": "./lib/actions/completeReview.js",
+            "title": "Completes the review for the current user",
+            "description": "Completes the review for the current user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/completeReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDetailedReview": {
+            "main": "./lib/actions/getDetailedReview.js",
+            "title": "Returns the specified review.",
+            "description": "Returns the specified review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDetailedReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewPatches": {
+            "main": "./lib/actions/getReviewPatches.js",
+            "title": "Get a list of patches and their details for the given review",
+            "description": "Get a list of patches and their details for the given review",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewPatches.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addPatchToReview": {
+            "main": "./lib/actions/addPatchToReview.js",
+            "title": "Add the revisions in a patch to an existing review.",
+            "description": "Add the revisions in a patch to an existing review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addPatchToReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removePatch": {
+            "main": "./lib/actions/removePatch.js",
+            "title": "Removes the patch with the given id from the review. All of the revisions provided by the patch will be removed as well.",
+            "description": "Removes the patch with the given id from the review. All of the revisions provided by the patch will be removed as well.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removePatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "publishAllComments": {
+            "main": "./lib/actions/publishAllComments.js",
+            "title": "Publishes all the draft comments of the current user.",
+            "description": "Publishes all the draft comments of the current user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/publishAllComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "publishComment": {
+            "main": "./lib/actions/publishComment.js",
+            "title": "publishes the given draft comment.",
+            "description": "publishes the given draft comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/publishComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remindIncompleteReviewers": {
+            "main": "./lib/actions/remindIncompleteReviewers.js",
+            "title": "Immediately send a reminder to incomplete reviewers about the given review.",
+            "description": "Immediately send a reminder to incomplete reviewers about the given review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remindIncompleteReviewers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewers": {
+            "main": "./lib/actions/getReviewers.js",
+            "title": "Get a list of reviewers in the review given by the permaid id.",
+            "description": "Get a list of reviewers in the review given by the permaid id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addReviewers": {
+            "main": "./lib/actions/addReviewers.js",
+            "title": "Adds the given list of reviewers to the review.",
+            "description": "Adds the given list of reviewers to the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addReviewers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCompletedReviewers": {
+            "main": "./lib/actions/getCompletedReviewers.js",
+            "title": "Gets a list of completed reviewers.",
+            "description": "Gets a list of completed reviewers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCompletedReviewers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUncompletedReviewers": {
+            "main": "./lib/actions/getUncompletedReviewers.js",
+            "title": "Gets a list of reviewers that have not completed the review.",
+            "description": "Gets a list of reviewers that have not completed the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUncompletedReviewers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeReviewer": {
+            "main": "./lib/actions/removeReviewer.js",
+            "title": "Removes the reviewer from the review.",
+            "description": "Removes the reviewer from the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeReviewer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewItemsForReview": {
+            "main": "./lib/actions/getReviewItemsForReview.js",
+            "title": "Returns a list of all the items in a review.",
+            "description": "Returns a list of all the items in a review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewItemsForReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addFisheyeReviewItem": {
+            "main": "./lib/actions/addFisheyeReviewItem.js",
+            "title": "Add the changes between two files in a fisheye repository to the review.",
+            "description": "Add the changes between two files in a fisheye repository to the review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addFisheyeReviewItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addReviewItem": {
+            "main": "./lib/actions/addReviewItem.js",
+            "title": "Adds the given review item to the review. This will always create a new review item, even if there is an existing\n one with the same data in the review (in which case the existing item will be replaced).",
+            "description": "Adds the given review item to the review. This will always create a new review item, even if there is an existing\n one with the same data in the review (in which case the existing item will be replaced).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addReviewItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addReviewItems": {
+            "main": "./lib/actions/addReviewItems.js",
+            "title": "Adds a review item for each of the supplied crucibleRevisionData elements.",
+            "description": "Adds a review item for each of the supplied crucibleRevisionData elements.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addReviewItems.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeReviewItem": {
+            "main": "./lib/actions/removeReviewItem.js",
+            "title": "Removes an item from a review.",
+            "description": "Removes an item from a review.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeReviewItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewItem": {
+            "main": "./lib/actions/getReviewItem.js",
+            "title": "Returns detailed information for a specific review item.",
+            "description": "Returns detailed information for a specific review item.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewItemsComments": {
+            "main": "./lib/actions/getReviewItemsComments.js",
+            "title": "getReviewItemsComments",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewItemsComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addVersionedComment": {
+            "main": "./lib/actions/addVersionedComment.js",
+            "title": "This call includes the  repsonse header that contains the URL of the newly created entity.",
+            "description": "This call includes the  repsonse header that contains the URL of the newly created entity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addVersionedComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "setReviewItem": {
+            "main": "./lib/actions/setReviewItem.js",
+            "title": "Sets the review item specified by itemId with the given reviewItem. The old review item is discarded. Can only\n perform this operation if the old review item specified by itemId can be deleted. The old review item's permId is\n not changed.",
+            "description": "Sets the review item specified by itemId with the given reviewItem. The old review item is discarded. Can only\n perform this operation if the old review item specified by itemId can be deleted. The old review item's permId is\n not changed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/setReviewItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeReviewItemRevisions": {
+            "main": "./lib/actions/removeReviewItemRevisions.js",
+            "title": "Removes the revisions given from the review item in the review specified by the id. If the review item has no\n more revisions left, it is automatically deleted.",
+            "description": "Removes the revisions given from the review item in the review specified by the id. If the review item has no\n more revisions left, it is automatically deleted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeReviewItemRevisions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addReviewItemRevisions": {
+            "main": "./lib/actions/addReviewItemRevisions.js",
+            "title": "Adds the given list of revisions to the supplied review item, merging if required. For example, if the review\n item for  contains revisions 3 to 6, and if:",
+            "description": "Adds the given list of revisions to the supplied review item, merging if required. For example, if the review\n item for  contains revisions 3 to 6, and if:",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addReviewItemRevisions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "changeState": {
+            "main": "./lib/actions/changeState.js",
+            "title": "Change the state of a review by performing an action on it.",
+            "description": "Change the state of a review by performing an action on it.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/changeState.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAvailableTransitions": {
+            "main": "./lib/actions/getAvailableTransitions.js",
+            "title": "Get a list of the actions which the current user can perform on this\n review, given its current state and the user's permissions.",
+            "description": "Get a list of the actions which the current user can perform on this\n review, given its current state and the user's permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAvailableTransitions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "uncompleteReview": {
+            "main": "./lib/actions/uncompleteReview.js",
+            "title": "Uncompletes the review for the current user.",
+            "description": "Uncompletes the review for the current user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/uncompleteReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewsForTerm": {
+            "main": "./lib/actions/getReviewsForTerm.js",
+            "title": "Search for reviews where the name, description, state or permaId contain the specified term.",
+            "description": "Search for reviews where the name, description, state or permaId contain the specified term.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewsForTerm.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getReviewsForIssueKey": {
+            "main": "./lib/actions/getReviewsForIssueKey.js",
+            "title": "Get a list of all reviews that have been linked to the specified JIRA issue key.",
+            "description": "Get a list of all reviews that have been linked to the specified JIRA issue key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getReviewsForIssueKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUsers": {
+            "main": "./lib/actions/getUsers.js",
+            "title": "Get a list of all the users. You can also ask for a set of users.",
+            "description": "Get a list of all the users. You can also ask for a set of users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMappedUser": {
+            "main": "./lib/actions/getMappedUser.js",
+            "title": "Returns the user details of the user mapped to a committer in a repository.",
+            "description": "Returns the user details of the user mapped to a committer in a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMappedUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUserProfile": {
+            "main": "./lib/actions/getUserProfile.js",
+            "title": "Returns the user's profile details.",
+            "description": "Returns the user's profile details.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUserProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
